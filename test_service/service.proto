@@ -1,0 +1,19 @@
+syntax = "proto3"; // 语法声明
+
+package main;  // 包声明
+
+service TestService{
+    // 测试方法
+    rpc TestServer(Request) returns (Response){}
+}
+// request 请求结构体
+message Request{
+    string te_name = 1;
+}
+
+// response 响应结构体
+message Response{
+    string message = 1;
+}
+
+

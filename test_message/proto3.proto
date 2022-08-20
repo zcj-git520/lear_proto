@@ -1,0 +1,29 @@
+// proto 学习
+
+syntax = "proto3"; // 语法声明
+
+package main; // 默认与go文件中的包名一致
+// option go_package = "zcj_proto"; // 不一致时，可以使用go_package
+
+// 测试message 采用为驼峰的命令方式
+ message TestMessage{
+     string te_name = 1;
+     int32 te_age = 2;
+     int32 te_count = 3;
+     double te_money = 4;
+     float te_score = 5;
+     bool te_fat = 6;
+     bytes te_char = 7;
+     // 枚举类型
+     enum Status{
+         OK = 0;
+         FAIL = 1;
+     }
+     message TeChild{
+         string ch_name = 1;
+         string ch_sex = 2;
+     }
+     TeChild childs = 9;
+     // map类型
+     map<string, int32> te_map = 10;
+ }
